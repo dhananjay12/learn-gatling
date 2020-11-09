@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: employee-service
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+        hibernate.cache.use_query_cache: false
+        hibernate.generate_statistics: true
+  h2:
+    console:
+      enabled: true

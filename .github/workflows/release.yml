@@ -7,7 +7,6 @@ on:
 
 jobs:
   docker:
-    needs: test # Dont run before test job is successful. Note each job runs in a fresh instance of a virtual environment. So there is no sharing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -1,0 +1,27 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  docker:
+    needs: test # Dont run before test job is successful. Note each job runs in a fresh instance of a virtual environment. So there is no sharing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Test
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11.0.x
+      - run: mvn clean verify
+
+      - name: JIB Imaged
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11.0.x
+      - run: mvn -Dmaven.test.skip=true package jib:build -Djib.to.auth.username=${DOCKER_USER} -Djib.to.auth.password=${DOCKER_TOKEN}
+

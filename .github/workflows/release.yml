@@ -16,11 +16,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11.0.x
-        run: mvn -f employee-service/pom.xml clean verify
+      - run: mvn -f employee-service/pom.xml clean verify
 
       - name: JIB Imaged
         uses: actions/setup-java@v1
         with:
           java-version: 11.0.x
-        run: mvn -f employee-service/pom.xml -Dmaven.test.skip=true package jib:build -Djib.to.auth.username=${{ secrets.DOCKER_USER }} -Djib.to.auth.password=${{ secrets.DOCKER_TOKEN }}
+      - run: mvn -f employee-service/pom.xml -Dmaven.test.skip=true package jib:build -Djib.to.auth.username=${{ secrets.DOCKER_USER }} -Djib.to.auth.password=${{ secrets.DOCKER_TOKEN }}
 

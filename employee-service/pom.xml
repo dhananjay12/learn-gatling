@@ -17,7 +17,7 @@
   <properties>
     <java.version>11</java.version>
     <docker.image.url>dhananjay12</docker.image.url>
-    <docker.image.prefix>gitlab</docker.image.prefix>
+    <docker.image.prefix>gattling</docker.image.prefix>
   </properties>
 
   <dependencies>

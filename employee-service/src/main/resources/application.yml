@@ -3,6 +3,10 @@ spring:
     name: employee-service
   profiles:
     active: local
+
+springdoc:
+  api-docs:
+    path: /api-docs
 ---
 spring:
   profiles: local

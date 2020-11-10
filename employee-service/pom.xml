@@ -43,6 +43,11 @@
       <optional>true</optional>
     </dependency>
     <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.2.32</version>
+    </dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <scope>runtime</scope>
@@ -70,6 +75,24 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+       <plugin>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-maven-plugin</artifactId>
+        <version>0.2</version>
+        <executions>
+          <execution>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!--<apiDocsUrl>http://localhost:8080/v3/api-docs</apiDocsUrl>-->
+          <!--<outputFileName>fortune-open-api.json</outputFileName>
+          <outputDir>${project.build.directory}/../open-api</outputDir>-->
+        </configuration>
       </plugin>
       <plugin>
         <groupId>pl.project13.maven</groupId>

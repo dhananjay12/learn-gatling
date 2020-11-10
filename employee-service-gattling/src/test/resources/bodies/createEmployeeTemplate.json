@@ -1,0 +1,6 @@
+{
+  "fname": "${fname}",
+  "lname": "${lname}",
+  "email": "${email}",
+  "dob": "${dob}"
+}

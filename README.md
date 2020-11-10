@@ -1,4 +1,4 @@
-# learn-gattling
+# learn-gatling
 
 ## App Urls
 

@@ -8,7 +8,7 @@
     <version>2.3.4.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.djcodes.spring.gattling</groupId>
+  <groupId>com.djcodes.spring.gatling</groupId>
   <artifactId>employee-service</artifactId>
   <version>0.1.0</version>
   <name>employee-service</name>
